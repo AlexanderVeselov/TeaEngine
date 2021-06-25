@@ -45,8 +45,8 @@ set(SHADER_SOURCES
 
 source_group("shaders" FILES ${SHADER_SOURCES})
 
-add_library(ChayRender STATIC ${SOURCES} ${SHADER_SOURCES})
-target_include_directories(ChayRender PUBLIC .)
-target_include_directories(ChayRender PRIVATE ${ChayEngine_SOURCE_DIR}/dependencies/tinyobjloader)
-target_link_libraries(ChayRender GpuApi)
-target_compile_features(ChayRender PUBLIC cxx_std_17)
+add_library(Engine STATIC ${SOURCES} ${SHADER_SOURCES})
+target_include_directories(Engine PUBLIC .)
+target_include_directories(Engine PRIVATE ${ChayEngine_SOURCE_DIR}/dependencies/tinyobjloader)
+target_link_libraries(Engine GpuApi)
+target_compile_features(Engine PUBLIC cxx_std_17)
