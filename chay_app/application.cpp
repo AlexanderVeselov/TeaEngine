@@ -43,6 +43,8 @@ namespace vklabs
         std::vector<char const*> required_extensions(glfw_extensions, glfw_extensions + glfw_extension_count);
         */
 
+        engine_ = std::make_unique<Engine>();
+
         videoapi_.reset(gpu::Api::CreateD3D12Api());
         device_ = videoapi_->CreateDevice();
 
@@ -119,6 +121,8 @@ namespace vklabs
             // Main loop
             glfwSwapBuffers(window_.get());
             glfwPollEvents();
+
+            engine_->RunFrame();
 
             fences_[frame_index]->Wait();
             queue.Submit(cmd_buffers_[frame_index], fences_[frame_index]);

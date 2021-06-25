@@ -7,10 +7,13 @@
 class Scene
 {
 public:
+    Scene();
+    //void AttachEntity(Entity entity);
+    void Update(float dt);
 
 private:
-    std::vector<std::uint32_t> index_buffer_;
-    std::vector<Vertex> vertex_buffer_;
+    //std::vector<std::uint32_t> index_buffer_;
+    //std::vector<Vertex> vertex_buffer_;
 };
 
 #endif // SCENE_HPP_

@@ -1,24 +1,40 @@
 set(SOURCES
     app_settings.hpp
-    entity.hpp
-    entity.cpp
-    entity_manager.hpp
-    entity_manager.cpp
-    component.hpp
-    component.cpp
-    component_manager.hpp
-    component_manager.cpp
-    transform.hpp
-    transform.cpp
-    renderable.hpp
-    mesh.hpp
-    mesh.cpp
-    camera.hpp
+    asset.hpp
+    asset_manager.cpp
+    asset_manager.hpp
     camera.cpp
-    scene.hpp
-    scene.cpp
-    obj_loader.hpp
+    camera.hpp
+    component.cpp
+    component.hpp
+    component_manager.cpp
+    component_manager.hpp
+    engine.cpp
+    engine.hpp
+    entity.cpp
+    entity.hpp
+    entity_manager.cpp
+    entity_manager.hpp
+    forward_render.cpp
+    forward_render.hpp
+    mathlib.hpp
+    matrix.cpp
+    mesh.cpp
+    mesh.hpp
+    mesh_system.cpp
+    mesh_system.hpp
+    model.cpp
+    model.hpp
     obj_loader.cpp
+    obj_loader.hpp
+    render.hpp
+    renderable.hpp
+    resource_manager.cpp
+    resource_manager.hpp
+    scene.cpp
+    scene.hpp
+    transform.cpp
+    transform.hpp
 )
 
 set(SHADER_SOURCES

@@ -7,6 +7,7 @@
 #include "gpu_pipeline.hpp"
 #include "gpu_sync.hpp"
 #include "gpu_buffer.hpp"
+#include "engine.hpp"
 
 #include <GLFW/glfw3.h>
 #include <memory>
@@ -23,6 +24,8 @@ namespace vklabs
 
     private:
         AppSettings settings_;
+        std::unique_ptr<Engine> engine_;
+
         std::unique_ptr<GLFWwindow, void(*)(GLFWwindow*)> window_;
         std::unique_ptr<gpu::Api> videoapi_;
         std::unique_ptr<gpu::Device> device_;

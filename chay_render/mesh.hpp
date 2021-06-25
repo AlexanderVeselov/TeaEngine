@@ -3,6 +3,9 @@
 
 #include "renderable.hpp"
 
+/**
+ * Mesh class.
+ */
 class Mesh
 {
 public:
