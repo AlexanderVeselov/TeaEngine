@@ -122,9 +122,12 @@ public:
     Window(std::uint32_t width, std::uint32_t height, char const* title);
     ~Window();
 
+    // Returns HWND in the case of WIN32 platform
+    void* GetNativeHandle() const;
+
     void PollEvents();
     bool ShouldClose() const;
-    bool GetKey() const;
+    bool GetKey(KeyCode code) const;
 
 private:
     std::unique_ptr<GLFWwindow, void(*)(GLFWwindow*)> window_;

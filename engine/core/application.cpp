@@ -28,13 +28,20 @@ void Application::CreateWindow(std::uint32_t width, std::uint32_t height, char c
     window_ = std::make_unique<Window>(1280, 720, "Test");
 }
 
-bool Application::GetKey()
+bool Application::GetKey() const
 {
     return true;
 }
 
+void Application::CreateRenderDevice()
+{
+    render_api_.reset(gpu::Api::CreateD3D12Api());
+    render_device_ = render_api_->CreateDevice();
+}
+
 void Application::Run()
 {
+    CreateRenderDevice();
     OnInit();
 
     while (window_ && !window_->ShouldClose())

@@ -1,7 +1,14 @@
 #include "window.hpp"
+
+#ifdef WIN32
+#define GLFW_EXPOSE_NATIVE_WIN32
+#include <GLFW/glfw3native.h>
+#else
+#error Other platforms are not currently supported
+#endif
+
 #include <stdexcept>
 #include <unordered_map>
-
 
 namespace engine
 {
@@ -157,10 +164,14 @@ bool Window::ShouldClose() const
     return glfwWindowShouldClose(window_.get());
 }
 
-bool Window::GetKey() const
+bool Window::GetKey(KeyCode code) const
 {
     return true;//glfwGetKey
 }
 
+void* Window::GetNativeHandle() const
+{
+    return glfwGetWin32Window(window_.get());
+}
 
 } // namespace engine
